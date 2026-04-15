@@ -15,10 +15,10 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-/* HERO ESTILO CANVA */
+/* HERO */
 .hero {
     height:100vh;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
                 url('cenote1.jpeg') center/cover no-repeat;
     color:white;
     display:flex;
@@ -71,11 +71,76 @@ nav a {
 }
 
 .side-image img {
-    width:250px;
+    width:260px;
     border-radius:15px;
 }
 
-/* WHATS */
+/* SECCIONES */
+.section {
+    padding:80px 20px;
+    text-align:center;
+    background:#f5f7fa;
+}
+
+/* GALERIA */
+.galeria img {
+    width:300px;
+    margin:15px;
+    border-radius:15px;
+}
+
+/* CARDS */
+.cards {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.card {
+    background:white;
+    margin:15px;
+    padding:25px;
+    border-radius:15px;
+    width:300px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover {
+    transform:translateY(-10px);
+}
+
+.price {
+    font-size:22px;
+    color:#0077b6;
+}
+
+/* FORMULARIO */
+.formulario {
+    display:flex;
+    flex-direction:column;
+    max-width:400px;
+    margin:auto;
+}
+
+.formulario input,
+.formulario select,
+.formulario textarea {
+    margin:10px 0;
+    padding:12px;
+    border-radius:8px;
+    border:1px solid #ccc;
+}
+
+.formulario button {
+    background:#0077b6;
+    color:white;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+}
+
+/* WHATSAPP */
 .whatsapp {
     position:fixed;
     bottom:20px;
@@ -92,25 +157,91 @@ nav a {
 <body>
 
 <nav>
-    <a href="#">Inicio</a>
+    <a href="#inicio">Inicio</a>
+    <a href="#galeria">Galería</a>
     <a href="#paquetes">Paquetes</a>
-    <a href="#contacto">Contacto</a>
+    <a href="#contacto">Reservas</a>
 </nav>
 
-<section class="hero">
+<!-- HERO -->
+<section id="inicio" class="hero">
     <h1>EXPLORA<br>CENOTES</h1>
-    <p>Vive una experiencia única en los cenotes de Homún, Yucatán.</p>
+    <p>Descubre la magia de Yucatán y vive experiencias únicas en Homún.</p>
     <a href="#paquetes" class="btn">Ver Paquetes</a>
 </section>
 
+<!-- IMAGEN LATERAL -->
 <div class="side-image">
     <img src="cenote3.jpeg">
 </div>
 
-<!-- WHATSAPP -->
-<a href="https://wa.me/5219990000000" class="whatsapp">💬</a>
+<!-- GALERIA -->
+<section id="galeria" class="section">
+    <h2>Galería</h2>
+    <div class="galeria">
+        <img src="cenote1.jpeg">
+        <img src="cenote3.jpeg">
+    </div>
+</section>
+
+<!-- PAQUETES -->
+<section id="paquetes" class="section">
+    <h2>Paquetes</h2>
+    <div class="cards">
+
+        <div class="card">
+            <h3>Básico</h3>
+            <p>Entrada + recorrido</p>
+            <p class="price">$200 MXN</p>
+        </div>
+
+        <div class="card">
+            <h3>Premium</h3>
+            <p>Entrada + guía + comida</p>
+            <p class="price">$500 MXN</p>
+        </div>
+
+        <div class="card">
+            <h3>VIP</h3>
+            <p>Todo  + transporte</p>
+            <p class="price">$900 MXN</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- FORMULARIO -->
+<section id="contacto" class="section">
+    <h2>Reserva tu experiencia</h2>
+    <p>Llena el formulario y te contactamos</p>
+
+    <form action="https://formspree.io/f/mbdqlwko" method="POST" class="formulario">
+        
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
+        <input type="tel" name="telefono" placeholder="Tu teléfono" required>
+
+        <select name="paquete">
+            <option>Básico</option>
+            <option>Premium</option>
+            <option>VIP</option>
+        </select>
+
+        <input type="date" name="fecha" required>
+
+        <textarea name="mensaje" placeholder="Mensaje adicional"></textarea>
+
+        <button type="submit">Reservar</button>
+    </form>
+
+    <br><br>
+
+    <a href="https://wa.me/9991058974?text=Hola%20quiero%20reservar%20un%20paquete" target="_blank">
+        📲 Reservar por WhatsApp
+    </a>
+</section>
+
+<!-- BOTON WHATS -->
+<a href="https://wa.me/9991058974" class="whatsapp">💬</a>
 
 </body>
 </html>
-
-
